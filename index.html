@@ -5,42 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>AHORCADO</title>
+    <title>Hanged man game</title>
 </head>
 <body>
     <main class="page-content">
         <article class="game-tools">
+            <p class="missed"> You have missed <span id="missed">0</span> times</p>
             <div id="word" class="word"></div>
             <div class="startGame" id="startGame">start the game!</div>
+            <div class="letterNot">
+                <p class="letterNotTitle">The word has not:</p>
+                <p class="lettersDontHave" id="lettersDontHave"></p>
+            </div>
         </article>
         <article class="letter-container" id="letter-container">
-            <div class="letter">a</div>
-            <div class="letter">b</div>
-            <div class="letter">c</div>
-            <div class="letter">d</div>
-            <div class="letter">e</div>
-            <div class="letter">f</div>
-            <div class="letter">g</div>
-            <div class="letter">h</div>
-            <div class="letter">i</div>
-            <div class="letter">j</div>
-            <div class="letter">k</div>
-            <div class="letter">l</div>
-            <div class="letter">m</div>
-            <div class="letter">n</div>
-            <div class="letter">ñ</div>
-            <div class="letter">o</div>
-            <div class="letter">p</div>
-            <div class="letter">q</div>
-            <div class="letter">r</div>
-            <div class="letter">s</div>
-            <div class="letter">t</div>
-            <div class="letter">u</div>
-            <div class="letter">v</div>
-            <div class="letter">w</div>
-            <div class="letter">x</div>
-            <div class="letter">y</div>
-            <div class="letter">z</div>
+            <div class="letter" data-actionable>a</div>
+            <div class="letter" data-actionable>b</div>
+            <div class="letter" data-actionable>c</div>
+            <div class="letter" data-actionable>d</div>
+            <div class="letter" data-actionable>e</div>
+            <div class="letter" data-actionable>f</div>
+            <div class="letter" data-actionable>g</div>
+            <div class="letter" data-actionable>h</div>
+            <div class="letter" data-actionable>i</div>
+            <div class="letter" data-actionable>j</div>
+            <div class="letter" data-actionable>k</div>
+            <div class="letter" data-actionable>l</div>
+            <div class="letter" data-actionable>m</div>
+            <div class="letter" data-actionable>n</div>
+            <div class="letter" data-actionable>ñ</div>
+            <div class="letter" data-actionable>o</div>
+            <div class="letter" data-actionable>p</div>
+            <div class="letter" data-actionable>q</div>
+            <div class="letter" data-actionable>r</div>
+            <div class="letter" data-actionable>s</div>
+            <div class="letter" data-actionable>t</div>
+            <div class="letter" data-actionable>u</div>
+            <div class="letter" data-actionable>v</div>
+            <div class="letter" data-actionable>w</div>
+            <div class="letter" data-actionable>x</div>
+            <div class="letter" data-actionable>y</div>
+            <div class="letter" data-actionable>z</div>
         </article>
     </main>
     <script src="main.js"></script>
