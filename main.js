@@ -20,6 +20,7 @@ startGame.addEventListener('click',()=>{
         el.setAttribute('data-actionable','data-actionable');
     })
     lettersDontHave.textContent='';
+    misses=0;
     missed.textContent=0;
  
 })
@@ -34,7 +35,7 @@ letterContainer.addEventListener('click',(e)=>{
             if(!word.textContent.includes('_')) word.textContent = 'you`ve won!! congratulations :)';
         }
         
-        else {
+        else if(!randomWord.includes(e.target.textContent)) {
             document.body.style.backgroundColor = 'red';
             misses+=1;
             lettersDontHave.textContent+=e.target.textContent;
