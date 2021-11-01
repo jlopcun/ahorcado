@@ -1,5 +1,5 @@
 const word = document.getElementById('word');
-const allWords = ['manolito','pepa','argentina','peru','mamamielda','pauxichan','barritens','nomen'];
+const allWords = ['mexico','chile','uruguay','paraguay','colonbia','venezuela','ecuador','argentina','bolivia','salvador','españa'];
 const startGame = document.getElementById('startGame');
 const letterContainer = document.getElementById('letter-container');
 const letters = document.querySelectorAll('.letter');
