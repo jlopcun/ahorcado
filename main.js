@@ -5,6 +5,7 @@ const letterContainer = document.getElementById('letter-container');
 const letters = document.querySelectorAll('.letter');
 const lettersDontHave = document.getElementById('lettersDontHave');
 const missed = document.getElementById('missed');
+const RootStyles = document.documentElement.style;
 let wordSelected;
 let randomWord;
 let wordbars;
@@ -15,7 +16,7 @@ startGame.addEventListener('click',()=>{
     wordbars = new Array(randomWord.length).fill('_');
     word.textContent=wordbars.toString().replaceAll(',','');
     if(word.textContent) startGame.textContent='Another word!';
-    document.body.style.backgroundColor = '#fff';
+    RootStyles.setProperty('--bodybg','#fff');
     letters.forEach((el)=>{
         el.setAttribute('data-actionable','data-actionable');
     })
@@ -30,13 +31,13 @@ letterContainer.addEventListener('click',(e)=>{
             e.target.removeAttribute('data-actionable');
        }
         else if(randomWord.includes(e.target.textContent)){
-            document.body.style.backgroundColor = 'green' ; 
+            RootStyles.setProperty('--bodybg','#0f0');
             hasAnotherIndex(wordSelected,e.target.textContent);
             if(!word.textContent.includes('_')) word.textContent = 'you`ve won!! congratulations :)';
         }
         
         else if(!randomWord.includes(e.target.textContent)) {
-            document.body.style.backgroundColor = 'red';
+            RootStyles.setProperty('--bodybg','#f00');
             misses+=1;
             lettersDontHave.textContent+=e.target.textContent;
             missed.textContent=misses;
