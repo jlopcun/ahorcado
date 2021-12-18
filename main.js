@@ -1,5 +1,4 @@
 const word = document.getElementById('word');
-const allWords = ['mexico','chile','uruguay','paraguay','colonbia','venezuela','ecuador','argentina','bolivia','salvador','españa'];
 const startGame = document.getElementById('startGame');
 const letterContainer = document.getElementById('letter-container');
 const letters = document.querySelectorAll('.letter');
@@ -10,8 +9,17 @@ let wordSelected;
 let randomWord;
 let wordbars;
 let misses=0;
-startGame.addEventListener('click',()=>{
-    randomWord =  allWords[randomInt(0,allWords.length-1)];
+startGame.addEventListener('click', async ()=>{
+    const removeAccents = (str) => {
+        return str.normalize('NFD').replace(new RegExp(/[\u0300-\u036f]/g), "");
+      }
+    randomWord =await fetch('https://palabras-aleatorias-public-api.herokuapp.com/random')
+.then(Response=>{
+    return Response.json()
+}).then(data=>{
+    return data.body.Word
+})
+    randomWord=removeAccents(randomWord);
     wordSelected = randomWord.split("");
     wordbars = new Array(randomWord.length).fill('_');
     word.textContent=wordbars.toString().replaceAll(',','');
